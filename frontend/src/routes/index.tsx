@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import BigBanners from "@/components/banners/big-banners";
 import LargeBanner from "@/components/banners/large-banner";
 import SmallBanners from "@/components/banners/small-banners";
 import BrowseByCategory from "@/components/browse-by-category";
+import BrowseByProducts from "@/components/browse-by-products";
 
 export const Route = createFileRoute("/")({ component: App });
 
@@ -11,6 +13,8 @@ function App() {
 			<LargeBanner />
 			<SmallBanners />
 			<BrowseByCategory />
+			<BrowseByProducts />
+			<BigBanners />
 		</div>
 	);
 }
