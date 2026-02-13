@@ -39,7 +39,7 @@ const NavItem = ({
 
 export function Subnavbar() {
 	return (
-		<section className="xl:px-40 lg:px-16 md:px-8 py-2 bg-[#2E2E2E]">
+		<section className="xl:px-40 lg:px-16 md:px-8 bg-[#2E2E2E]">
 			<nav className="flex items-center justify-between md:justify-between gap-2 md:gap-4 lg:gap-6 ">
 				{navItems.map((item) => (
 					<NavItem key={item.link} {...item} />
