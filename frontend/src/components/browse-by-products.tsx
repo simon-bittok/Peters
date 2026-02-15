@@ -64,6 +64,14 @@ const newArrivals = [
 		isWishlisted: false,
 		alt: "iPhone 14 Pro Max Deep Purple",
 	},
+
+	{
+		name: "Apple iPhone 14 Pro Max 256GB Deep Purple",
+		price: 1099,
+		image: "/new-arrivals/iphone-14-pro.png",
+		isWishlisted: false,
+		alt: "iPhone 14 Pro Max 256GB Deep Purple",
+	},
 ];
 
 function BrowseByProducts() {
@@ -89,10 +97,15 @@ function BrowseByProducts() {
 				))}
 			</div>
 			{/* Product Grids */}
-			<div className="grid grid-cols-2 xl:grid-cols-4 space-y-4 gap-4">
-				{newArrivals.map((item) => (
+			<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 space-y-4 gap-4">
+				{newArrivals.slice(0, 8).map((item) => (
 					<ProductCard key={item.name} {...item} />
 				))}
+				<div className="hidden sm:block md:block lg:hidden">
+					{newArrivals.slice(8, 9).map((item) => (
+						<ProductCard key={item.name} {...item} />
+					))}
+				</div>
 			</div>
 		</section>
 	);

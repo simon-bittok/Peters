@@ -8,6 +8,7 @@ interface BigBannerProps {
 	imageAlt: string;
 	bgColour: string;
 	titleColour?: string;
+	imageWidth: string;
 	textColour?: string;
 	buttonVariant?: "light" | "dark";
 }
@@ -18,6 +19,7 @@ function BigBanner({
 	imageSrc,
 	imageAlt,
 	bgColour,
+	imageWidth,
 	titleColour = "text-black",
 	textColour = "text-[#909090]",
 	buttonVariant,
@@ -36,14 +38,15 @@ function BigBanner({
 		: "text-black group-hover:text-white";
 
 	return (
-		<div className={`px-8 pb-14 h-full md:w-90 w-full ${bgColour}`}>
+		<div className={`px-8 pb-14 h-full w-full  ${bgColour}`}>
 			<div className="flex flex-col space-y-6 h-full md:justify-between">
 				<div className="flex flex-col gap-6">
 					{/* Image Section */}
-					<div className="flex justify-center items-center w-full h-60">
+					<div className="flex justify-center shrink-0 items-center w-full h-60">
 						<img
 							src={imageSrc}
 							alt={imageAlt}
+							width={imageWidth}
 							className="object-contain object-center w-full h-full"
 						/>
 					</div>
@@ -88,6 +91,7 @@ const banners: BigBannerProps[] = [
 		imageAlt: "Ipad pro",
 		bgColour: "bg-[#FFFFFF]",
 		textColour: "text-[#909090]",
+		imageWidth: "366px",
 	},
 	{
 		title: "Samsung Galaxy",
@@ -97,6 +101,7 @@ const banners: BigBannerProps[] = [
 		imageAlt: "Ipad pro 5",
 		bgColour: "bg-[#F9F9F9]",
 		textColour: "text-[#909090]",
+		imageWidth: "360px",
 	},
 	{
 		title: "iPad Max",
@@ -106,6 +111,7 @@ const banners: BigBannerProps[] = [
 		imageAlt: "Ipad pro",
 		bgColour: "bg-[#EAEAEA]",
 		textColour: "text-[#909090]",
+		imageWidth: "366px",
 	},
 	{
 		title: "Macbook Air",
@@ -116,6 +122,7 @@ const banners: BigBannerProps[] = [
 		bgColour: "bg-[#2C2C2C]",
 		textColour: "text-[#909090]",
 		titleColour: "text-[#FFFFFF]",
+		imageWidth: "376px",
 	},
 ];
 
@@ -129,7 +136,7 @@ export default function BigBanners() {
 			{/* TODO: MAKE IT RESPONSIVE */}
 			<div className="relative">
 				{/* Mobile carousel */}
-				<div className="overflow-hidden space-y-12 lg:hidden">
+				<div className="overflow-hidden space-y-12 md:hidden">
 					<div
 						className="flex transition-transform duration-300 ease-in-out"
 						style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -158,7 +165,7 @@ export default function BigBanners() {
 				</div>
 
 				{/* Desktop grid */}
-				<div className="hidden w-full h-full lg:grid lg:grid-cols-4 gap-0">
+				<div className="hidden w-full h-full shrink-0 md:grid md:grid-cols-2 lg:grid-cols-4 gap-0">
 					{banners.map((banner) => (
 						<BigBanner key={banner.title} {...banner} />
 					))}
