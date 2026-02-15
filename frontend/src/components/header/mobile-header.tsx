@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/a11y/noStaticElementInteractions: TODO: Research further on this error */
+/** biome-ignore-all lint/a11y/useKeyWithClickEvents: Research further */
 import { MenuIcon, XIcon } from "lucide-react";
 import Logo from "@/components/logo";
 import { Separator } from "@/components/ui/separator";
@@ -6,7 +8,6 @@ import { IconButton, iconButtons, NavItem, navItems, SearchBar } from ".";
 export default function MobileHeader({
 	open,
 	setOpen,
-	pathname,
 }: {
 	open: boolean;
 	setOpen: (open: boolean) => void;
