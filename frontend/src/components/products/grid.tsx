@@ -21,7 +21,7 @@ export default function ProductGrid() {
 					<span className="text-xl text-black">85</span>
 				</h3>
 				{/* Grid */}
-				<main className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+				<main className="grid grid-cols-2 md:grid-cols-3 gap-4">
 					{products.map((item) => (
 						<ProductCard key={item.name} {...item} />
 					))}

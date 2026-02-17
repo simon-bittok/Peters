@@ -80,7 +80,7 @@ export function Filter({
 	options: { label: string; count: number; checked?: boolean }[];
 }) {
 	return (
-		<ScrollArea className="flex flex-col space-y-6 w-full max-h-84 md:w-[256px] md:max-w-[256px]">
+		<ScrollArea className="flex flex-col space-y-6 w-full max-h-84 lg:w-[256px] lg:max-w-[256px]">
 			<div className="py-2 mx-auto px-2">
 				<input
 					type="search"
@@ -155,7 +155,7 @@ export function MobileFilterButtons({
 	onFilterClick: () => void;
 }) {
 	return (
-		<section className="md:hidden gap-4 grid grid-cols-2 px-4 pt-10">
+		<section className="lg:hidden gap-4 grid grid-cols-2 px-4 pt-10">
 			<Button
 				variant={"outline"}
 				onClick={onFilterClick}

@@ -24,11 +24,13 @@ function RouteComponent() {
 				</div>
 			)}
 
-			<PageBreadcrumb />
+			<div className="hidden lg:block">
+				<PageBreadcrumb />
+			</div>
 
 			{/* Product Grid */}
-			<main className="pb-10 px-4 xl:px-40 mx-auto md:px-8 lg:px-16 md:pt-6 md:pb-14 flex items-start gap-8">
-				<div className="hidden md:block w-[256px]">
+			<main className="pb-10 px-4 xl:px-40 mx-auto md:px-6 lg:px-16 md:pt-6 md:pb-14 flex items-start md:gap-6 xl:gap-8">
+				<div className="hidden lg:block md:w-60 lg:w-[256px]">
 					<ProductFilters />
 				</div>
 				<ProductGrid />
