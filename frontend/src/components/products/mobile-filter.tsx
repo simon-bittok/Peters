@@ -35,7 +35,7 @@ function FilterCheckbox({
 	);
 }
 
-function PriceFilter({ from, to }: { from: number; to: number }) {
+export function PriceFilter({ from, to }: { from: number; to: number }) {
 	return (
 		<Accordion type="single" className="p-0 m-0">
 			<AccordionItem value="price" className="space-y-6">
@@ -74,17 +74,17 @@ function PriceFilter({ from, to }: { from: number; to: number }) {
 	);
 }
 
-function Filter({
+export function Filter({
 	options,
 }: {
 	options: { label: string; count: number; checked?: boolean }[];
 }) {
 	return (
-		<ScrollArea className="flex flex-col space-y-6 w-full max-h-84 lg:max-w-[256px]">
+		<ScrollArea className="flex flex-col space-y-6 w-full max-h-84 md:w-[256px] md:max-w-[256px]">
 			<div className="py-2 mx-auto px-2">
 				<input
 					type="search"
-					className="py-2 px-4 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none bg-[#F5F5F5] w-full lg:w-62"
+					className="py-2 px-4 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none bg-[#F5F5F5] w-full lg:w-60"
 					placeholder="Search..."
 				/>
 			</div>
@@ -155,7 +155,7 @@ export function MobileFilterButtons({
 	onFilterClick: () => void;
 }) {
 	return (
-		<section className="gap-4 grid grid-cols-2 px-4 pt-10">
+		<section className="md:hidden gap-4 grid grid-cols-2 px-4 pt-10">
 			<Button
 				variant={"outline"}
 				onClick={onFilterClick}

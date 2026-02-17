@@ -12,7 +12,7 @@ import ProductCard from "./card";
 
 export default function ProductGrid() {
 	return (
-		<section className="space-y-10 px-4">
+		<section className="space-y-10 ">
 			<main className="space-y-6">
 				<h3 className="font-medium leading-4 tracking-[0.03em] flex items-center">
 					<span className="text-base text-[#6C6C6C]">

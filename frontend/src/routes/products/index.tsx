@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import PageBreadcrumb from "@/components/products/breadcrumbs";
+import ProductFilters from "@/components/products/filters";
 import ProductGrid from "@/components/products/grid";
 import {
 	MobileFilter,
@@ -14,15 +16,21 @@ function RouteComponent() {
 	const [isFilterOpen, setIsFilterOpen] = useState(false);
 	return (
 		<div className="bg-white space-y-11.25 overflow-hidden border-t border-black/40">
-			{/* Filters */}
+			{/* Mobile Filters */}
 			<MobileFilterButtons onFilterClick={() => setIsFilterOpen(true)} />
 			{isFilterOpen && (
 				<div className="fixed inset-0 bg-white z-50 overflow-y-auto transition-transform duration-300 ease-in-out">
 					<MobileFilter onClose={() => setIsFilterOpen(false)} />
 				</div>
 			)}
+
+			<PageBreadcrumb />
+
 			{/* Product Grid */}
-			<main className="pb-10">
+			<main className="pb-10 px-4 xl:px-40 mx-auto md:px-8 lg:px-16 md:pt-6 md:pb-14 flex items-start gap-8">
+				<div className="hidden md:block w-[256px]">
+					<ProductFilters />
+				</div>
 				<ProductGrid />
 			</main>
 		</div>

@@ -19,7 +19,7 @@ export default function ProductCard({
 }: Props) {
 	const [isInWhishlist, setIsInWishlist] = useState(isWishlisted);
 	return (
-		<div className="space-y-2 md:space-y-4 py-6 px-3 md:px-4 bg-[#F6F6F6] rounded-[9px] max-w-67 h-88 md:h-108">
+		<div className="space-y-2 md:space-y-4 py-6 px-3 md:px-4 bg-[#F6F6F6] rounded-[9px] max-w-67 h-88 md:h-108 shadow-sm">
 			{/* Top section */}
 			<div className="w-full flex items-center shrink-0 justify-end p-0 gap-2">
 				<button type="button" onClick={() => setIsInWishlist((prev) => !prev)}>
