@@ -82,7 +82,7 @@ export function ProductInfo() {
 								key={item}
 								type="button"
 								onClick={() => setSelectedStorage(item.toUpperCase())}
-								className={`py-4 px-6 h-14 w-20 lg:w-30 border-[1.5px] rounded-sm transition-transform duration-300 flex items-center justify-center ${selectedStorage === item ? "border-black text-black" : "border-[#D5D5D5] text-[#6F6F6F]"}`}
+								className={`py-4 px-6 h-14 w-20 lg:w-30 md:w-40 border-[1.5px] rounded-sm transition-transform duration-300 flex items-center justify-center ${selectedStorage === item ? "border-black text-black" : "border-[#D5D5D5] text-[#6F6F6F]"}`}
 							>
 								<span className="font-medium text-base">{item}</span>
 							</button>
@@ -90,7 +90,7 @@ export function ProductInfo() {
 					</div>
 
 					{/* Details  */}
-					<main className="grid grid-cols-2 lg:grid-cols-3 lg:gap-4 gap-2">
+					<main className="grid grid-cols-2 md:grid-cols-3 md:gap-4 gap-2">
 						{specs.map(({ icon: Icon, label, value }) => (
 							<div
 								key={label}
@@ -121,7 +121,7 @@ export function ProductInfo() {
 			</main>
 
 			{/* Buttons */}
-			<section className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+			<section className="grid grid-cols-1 md:grid-cols-2 gap-4">
 				<Button variant="outline" className="h-14 border border-black/50">
 					Add to Wishlist
 				</Button>
@@ -131,13 +131,13 @@ export function ProductInfo() {
 			</section>
 
 			{/* icons */}
-			<div className="flex items-center gap-8 lg:grid lg:grid-cols-3">
+			<div className="flex items-center gap-8 md:grid md:grid-cols-3">
 				{services.map(({ name, icon: Icon, period }) => (
 					<div
 						key={name}
-						className="rounded-md flex flex-col lg:flex-row lg:items-start lg:justify-start gap-4 pb-4 lg:pb-0 shadow-xs md:shadow-sm w-32 lg:w-[158px] h-fit"
+						className="rounded-md flex flex-col md:flex-row md:items-start md:justify-start gap-4 pb-4 md:pb-0 shadow-xs md:shadow-none lg:shadow-sm w-32 md:w-full lg:w-[158px] h-fit"
 					>
-						<div className="flex items-center justify-center bg-[#f6f6f6] p-4 size-14 mx-auto lg:mx-0 rounded-md">
+						<div className="flex items-center justify-center bg-[#f6f6f6] p-4 size-14 mx-auto md:mx-0 rounded-md">
 							<Icon className="size-8 text-emerald-500" />
 						</div>
 						<p className="flex flex-col items-center justify-center lg:items-start lg:justify-start">

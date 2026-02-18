@@ -29,6 +29,20 @@ const products = [
 		price: 1499,
 		isWishlisted: false,
 	},
+	{
+		name: "Apple iPhone 13 Mini 128GB Pink (MK216)",
+		image: "/products/iphone-13-mini-128gb.png",
+		alt: "iPhone 14 pro gold",
+		price: 799,
+		isWishlisted: false,
+	},
+	{
+		name: "Apple iPhone 14 Pro 256GB Space Black (MQ245)",
+		image: "/products/iphone-14-space-black.png",
+		alt: "iPhone 11  white",
+		price: 875,
+		isWishlisted: false,
+	},
 ];
 
 export function RelatedProducts() {
@@ -38,8 +52,8 @@ export function RelatedProducts() {
 				<h2 className="font-medium leading-6 text-[24px]">Related Products</h2>
 			</div>
 
-			<div className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-8">
-				{products.map((product, index) => (
+			<div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-8">
+				{products.slice(0, 4).map((product, index) => (
 					<ProductCard key={`idx-${index}-${product.name}`} {...product} />
 				))}
 			</div>
