@@ -1,3 +1,4 @@
+import { i } from "node_modules/vite/dist/node/chunks/moduleRunnerTransport";
 import { useState } from "react";
 
 const productImages: {
@@ -34,34 +35,35 @@ export function ProductThumbnail() {
 	});
 
 	return (
-		<section className="flex flex-col gap-7.5">
+		<section className="flex flex-col lg:flex-row-reverse gap-7.5 lg:gap-12 lg:aspect-536/516 px-4 lg:p-0">
 			{/* Selected image */}
-			<div className="flex items-center justify-center">
+			<div className="flex items-center justify-center lg:flex-1">
 				<img
 					src={selectedImage.image}
 					alt={selectedImage.alt}
-					width={"264px"}
-					height={"330px"}
-					className="object-center object-contain"
+					className="object-center object-contain w-[264px] h-[330px] lg:w-full lg:h-full"
 				/>
 			</div>
 
-			<div className="flex items-center justify-center gap-3.5">
-				{productImages.map((item) => (
-					<button
-						key={item.image}
-						type="button"
-						className="max-w-[74.26px] flex items-center justify-center max-h-[66.34px]"
-					>
-						<img
-							src={item.image}
-							alt={item.alt}
-							width={"74.26px"}
-							height={"66.34px"}
-							className="object-contain object-center"
-						/>
-					</button>
-				))}
+			<div className="lg:my-auto lg:h-111 lg:w-[74.88px]">
+				<div className="flex items-center justify-center lg:flex-col lg:items-start gap-3.5 lg:gap-6">
+					{productImages.map((item) => (
+						<button
+							key={item.image}
+							type="button"
+							onClick={() => setSelectedImage(item)}
+							className="max-w-[74.26px] lg:max-w-[74.88px] h-[74.88px] flex items-center justify-center max-h-[66.34px] lg:max-h-[93px] lg:h-[93px] cursor-pointer"
+						>
+							<img
+								src={item.image}
+								alt={item.alt}
+								width={"74.26px"}
+								height={"66.34px"}
+								className="object-contain object-center w-auto h-full"
+							/>
+						</button>
+					))}
+				</div>
 			</div>
 		</section>
 	);

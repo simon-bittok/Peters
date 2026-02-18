@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { MdPhoneAndroid } from "react-icons/md";
-import { FaMicrochip, FaCamera } from "react-icons/fa";
 import { BsCpuFill } from "react-icons/bs";
-import { IoCameraReverse } from "react-icons/io5";
-import { GiBattery75 } from "react-icons/gi";
-import { Button } from "@/components/ui/button";
 import { CiDeliveryTruck, CiShop } from "react-icons/ci";
+import { FaCamera, FaMicrochip } from "react-icons/fa";
+import { GiBattery75 } from "react-icons/gi";
 import { HiOutlineBadgeCheck } from "react-icons/hi";
+import { IoCameraReverse } from "react-icons/io5";
+import { MdPhoneAndroid } from "react-icons/md";
+import { Button } from "@/components/ui/button";
 
 const colours = [
 	{ name: "black", class: "bg-gray-900", ring: "ring-yellow-500" },
@@ -38,7 +38,7 @@ export function ProductInfo() {
 	const [selectedStorage, setSelectedStorage] = useState("1TB");
 
 	return (
-		<section className="space-y-8">
+		<section className="space-y-8 px-4 lg:px-0">
 			{/* Content */}
 			<main className="space-y-4">
 				{/* Title */}
@@ -47,7 +47,7 @@ export function ProductInfo() {
 						Apple iPhone 14 Pro Max
 					</h1>
 					<div className="flex items-center gap-4">
-						<span className="font-medium text-[32px] leading-12 tracking-[0.03em]">
+						<span className="font-medium text-[32px] leading-12 tracking-[0.03em] text-black">
 							£1299
 						</span>
 						<span className="font-normal text-[#A0A0A0] text-2xl leading-8 tracking-[0.03em] line-through">
@@ -76,13 +76,13 @@ export function ProductInfo() {
 					</div>
 
 					{/* Storage Tabs */}
-					<div className="flex items-center justify-between gap-2">
+					<div className="flex items-center justify-between gap-2 lg:gap-4">
 						{storageOptions.map((item) => (
 							<button
 								key={item}
 								type="button"
 								onClick={() => setSelectedStorage(item.toUpperCase())}
-								className={`py-4 px-6 h-14 w-20 border-[1.5px] rounded-sm transition-transform duration-300 flex items-center justify-center ${selectedStorage === item ? "border-black text-black" : "border-[#D5D5D5] text-[#6F6F6F]"}`}
+								className={`py-4 px-6 h-14 w-20 lg:w-30 border-[1.5px] rounded-sm transition-transform duration-300 flex items-center justify-center ${selectedStorage === item ? "border-black text-black" : "border-[#D5D5D5] text-[#6F6F6F]"}`}
 							>
 								<span className="font-medium text-base">{item}</span>
 							</button>
@@ -90,7 +90,7 @@ export function ProductInfo() {
 					</div>
 
 					{/* Details  */}
-					<main className="grid grid-cols-2 gap-2 ">
+					<main className="grid grid-cols-2 lg:grid-cols-3 lg:gap-4 gap-2">
 						{specs.map(({ icon: Icon, label, value }) => (
 							<div
 								key={label}
@@ -121,7 +121,7 @@ export function ProductInfo() {
 			</main>
 
 			{/* Buttons */}
-			<section className="space-y-4 flex flex-col">
+			<section className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 				<Button variant="outline" className="h-14 border border-black/50">
 					Add to Wishlist
 				</Button>
@@ -131,17 +131,17 @@ export function ProductInfo() {
 			</section>
 
 			{/* icons */}
-			<div className="flex items-center gap-8">
+			<div className="flex items-center gap-8 lg:grid lg:grid-cols-3">
 				{services.map(({ name, icon: Icon, period }) => (
 					<div
 						key={name}
-						className="rounded-md space-y-4 pb-4 shadow-xs w-32 h-fit"
+						className="rounded-md flex flex-col lg:flex-row lg:items-start lg:justify-start gap-4 pb-4 lg:pb-0 shadow-xs md:shadow-sm w-32 lg:w-[158px] h-fit"
 					>
-						<div className="flex items-center justify-center bg-[#f6f6f6] p-4 w-14 h-14 mx-auto rounded-md">
+						<div className="flex items-center justify-center bg-[#f6f6f6] p-4 size-14 mx-auto lg:mx-0 rounded-md">
 							<Icon className="size-8 text-emerald-500" />
 						</div>
-						<p className="flex flex-col items-center justify-center">
-							<span className="block font-medium text-sm leading-6 text-[#717171]">
+						<p className="flex flex-col items-center justify-center lg:items-start lg:justify-start">
+							<span className="block font-medium text-xs leading-6 text-[#717171]">
 								{name}
 							</span>
 							<span className="block font-medium text-sm leading-6 text-black">
