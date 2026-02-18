@@ -4,9 +4,10 @@ import { requestId } from "hono/request-id";
 import pino from "pino";
 
 import { notFoundHandler, onErrorHandler } from "@/middlewares/error.middleware.ts";
+import type { AppBindings } from "@/types/app.types.ts";
 
 function createRouter() {
-  return new Hono({ strict: false });
+  return new Hono<AppBindings>({ strict: false });
 }
 
 function createApp() {
