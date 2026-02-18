@@ -1,0 +1,12 @@
+services:
+  database:
+    container_name: peters_db
+    image: postgres:17.5-alpine
+    restart: unless-stopped
+    env_file:
+        - .env
+    command: >
+      postgres
+      -c shared_preload_libraries=auto_explain,pg_stat_statements
+      -c auto_explain.log_min_duration=10
+

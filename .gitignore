@@ -1,0 +1,14 @@
+*.fish
+*.env
+!.env.example
+!test.env
+
+/node_modules
+/dist
+/build
+/.cache
+/.next
+/out
+/.vercel
+/.astro
+
