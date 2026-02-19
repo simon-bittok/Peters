@@ -10,4 +10,12 @@ class ErrorResponse {
   }
 }
 
+class EntityNotFound extends Error {
+  constructor(message: string = "Entity not found") {
+    super(message);
+  }
+}
+
+export { EntityNotFound };
+
 export default ErrorResponse;

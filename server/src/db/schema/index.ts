@@ -7,3 +7,5 @@ export {
   sessionRelations,
   accountRelations,
 } from "./auth.ts";
+
+export * from "./roles.ts";
