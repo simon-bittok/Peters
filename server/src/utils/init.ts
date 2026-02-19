@@ -7,7 +7,9 @@ import { notFoundHandler, onErrorHandler } from "@/middlewares/error.middleware.
 import type { AppBindings } from "@/types/app.types.ts";
 
 function createRouter() {
-  return new Hono<AppBindings>({ strict: false });
+  return new Hono<AppBindings>({
+    strict: false,
+  });
 }
 
 function createApp() {
